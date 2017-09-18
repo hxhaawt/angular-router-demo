@@ -1,0 +1,37 @@
+.nav {
+    height: 50px;
+    background-color: gray;
+}
+.container {
+    display: flex;
+    margin-top: 10px;
+}
+
+.left {
+    width: 70%;
+    /*height: 100px;*/
+    /*float: left;*/
+    box-sizing: border-box;
+    background-color: yellow;
+}
+.right {
+    flex: 1;
+    /*box-sizing: border-box;*/
+    background-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

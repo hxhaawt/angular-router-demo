@@ -1,0 +1,53 @@
+<div class="nav">
+    <a [routerLink]="['/home']">主页</a>
+
+    <!-- 第一种路由传递参数的方法 -->
+    <!--<a [routerLink]="['/product']" [queryParams]="{id: 1}" >商品详情</a>-->
+
+    <!-- 第二种路由传递参数的方法，同时要在app-routing.module.ts的路由规则里进行设置 -->
+    <a [routerLink]="['/product', 1]" >商品详情</a>
+
+
+    <input type="button" value="商品详情" (click)="toProductDetails()" >
+
+    <!-- 导航到辅助路由 -->
+    <!-- primary: 'home' 设置当点击开始聊天时，不管主路由当前在什么页面都跳转到home页面  -->
+    <a [routerLink]="[{outlets: {primary: 'home' ,aux: 'chat'}}]">开始聊天</a>
+
+    <!-- 不加 primary: 'home' 当点击开始聊天时，主路由页面不进行跳转 -->
+    <!--<a [routerLink]="[{outlets: {aux: 'chat'}}]">开始聊天</a>-->
+
+    <a [routerLink]="[{outlets: {aux: null}}]">结束聊天</a>
+</div>
+
+<div class="container">
+    <div class="left">
+        <!-- 主路由内容显示区域 -->
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="right">
+        <!-- 这是一个辅助路由 aux 名字随便取的 -->
+        <router-outlet name="aux"></router-outlet>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
